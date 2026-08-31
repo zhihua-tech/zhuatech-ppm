@@ -58,3 +58,7 @@ docker compose up --build
 ## 项目组合资源分配
 
 新增 `POST /api/ppm/insights/portfolio-capacity-allocation`，按强制项目、战略得分和优先级分配有限 FTE，返回每项工作的 `FUNDED / PARTIAL / WAITLIST` 状态、资源利用率及 `BALANCED / REBALANCE` 决策，支持组合层资源取舍。
+
+## 企业级项目组合投资门禁
+
+新增 `POST /api/enterprise/ppm/portfolio-investment-gate`，综合战略、风险、NPV、预算、FTE、治理角色和项目依赖，量化资金/容量缺口并返回 `APPROVE / CONDITIONAL / BLOCKED`。详见 [投资门禁说明](docs/ENTERPRISE_INVESTMENT_GATE.md)。
