@@ -9,9 +9,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class PortfolioCapacityAllocationServiceTests {
     private final PortfolioCapacityAllocationService service = new PortfolioCapacityAllocationService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void fundsMandatoryInitiativeBeforeStrategicBacklog() {
         var result = service.allocate(new PortfolioCapacityAllocationService.Request(10, List.of(
@@ -25,6 +31,9 @@ class PortfolioCapacityAllocationServiceTests {
         assertTrue(result.allocations().stream().anyMatch(item -> "PARTIAL".equals(item.status())));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void fullyFundsPortfolioWithinCapacity() {
         var result = service.allocate(new PortfolioCapacityAllocationService.Request(12, List.of(

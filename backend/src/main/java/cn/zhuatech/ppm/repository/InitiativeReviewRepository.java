@@ -1,3 +1,15 @@
 /* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.ppm.repository; import cn.zhuatech.ppm.model.InitiativeReview; import org.springframework.data.jpa.repository.JpaRepository; import java.util.List;
-public interface InitiativeReviewRepository extends JpaRepository<InitiativeReview,Long>{List<InitiativeReview> findAllByOrderByDueDateAsc();List<InitiativeReview> findByProjectPortfolioCodeOrderByDueDateAsc(String code);long countByStatus(InitiativeReview.Status status);}
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+public interface InitiativeReviewRepository extends JpaRepository<InitiativeReview,Long>{/**
+                                                                                          * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                          */
+List<InitiativeReview> findAllByOrderByDueDateAsc();/**
+                                                                                                                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                              */
+List<InitiativeReview> findByProjectPortfolioCodeOrderByDueDateAsc(String code);/**
+                                                                                                                                                                                                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                              */
+long countByStatus(InitiativeReview.Status status);}

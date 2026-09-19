@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class PortfolioInvestmentGateService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         long fundingGap = Math.max(0, request.budgetRequestedCents() - request.budgetAvailableCents());
         double capacityGap = Math.max(0, request.capacityDemandFte() - request.availableFte());
@@ -35,13 +41,22 @@ public class PortfolioInvestmentGateService {
         return new Assessment(Decision.APPROVE, fundingGap, capacityGap, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String projectCode, @Min(0) @Max(100) int strategicScore,
                           @Min(0) @Max(100) int riskScore, long npvCents,
                           @Min(0) double capacityDemandFte, @Min(0) double availableFte,
                           @Min(0) long budgetRequestedCents, @Min(0) long budgetAvailableCents,
                           boolean sponsorAssigned, boolean benefitsOwnerAssigned,
                           boolean dependenciesAssessed) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(Decision decision, long fundingGapCents, double capacityGapFte,
                              List<String> blockers, List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { APPROVE, CONDITIONAL, BLOCKED }
 }

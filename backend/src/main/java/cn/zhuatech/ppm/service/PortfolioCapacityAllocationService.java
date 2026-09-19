@@ -12,8 +12,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class PortfolioCapacityAllocationService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result allocate(Request request) {
         List<Initiative> ranked = request.initiatives().stream().sorted((left, right) -> {
             int mandatory = Boolean.compare(right.mandatory(), left.mandatory());
@@ -39,22 +45,37 @@ public class PortfolioCapacityAllocationService {
             round(remaining), decision, allocations);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double round(double value) {
         return Math.round(value * 10_000D) / 10_000D;
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@DecimalMin("0") double availableFte,
                           @NotEmpty List<@Valid Initiative> initiatives) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Initiative(@NotBlank String initiativeCode,
                              @DecimalMin("0.1") double demandFte,
                              @Min(1) @Max(5) int priority,
                              @Min(0) @Max(100) int strategicScore,
                              boolean mandatory) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Allocation(String initiativeCode, double demandFte,
                              double allocatedFte, String status) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(double availableFte, double allocatedFte, double utilization,
                          double remainingFte, String decision, List<Allocation> allocations) {}
 }
